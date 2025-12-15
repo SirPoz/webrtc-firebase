@@ -1,23 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Syne Mono', monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 80px 10px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
+
 
 video {
-  width: 40vw;
-  height: 30vw;
-  margin: 2rem;
   background: #2c3e50;
+  object-fit: cover;
 }
 
-.videos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.smallVideo {
+  transform: scaleX(-1); 
+  width: 26vw;
+  height: 26vh;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 2;
+  box-shadow: rgba(0,0,0,0.6) -5px 5px 15px 5px;
+}
+
+.largeVideo {
+  transform: scaleX(-1); 
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#buttons {
+  position: fixed;
+  bottom: 30px;
+  left: 30%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.btn {
+  font-size: 25px;
+  width: 60px;
+  height:60px;
+  padding: 13px 10px 10px 10px;
+  margin: 0px 10px;
+  cursor: pointer;
+  outline: none !important;
+  border: none !important;
+  border-radius: 100% !important;
+  background-color: #3498db !important;
+  color: white !important;
+}
+
+.largeTime{
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.smallTime{
+  position: absolute;
+  bottom: calc(26vh + 30px);
+  right: calc(26vw + 30px);
+  transform: translateX(100%);
+  z-index: 2;  
+  font-size: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  border-radius: 10px;
 }
